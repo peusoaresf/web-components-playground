@@ -1,4 +1,4 @@
-## Context
+## Web Components Playground
 
 Simple web components playground, no flashy styles yet cause the intention is to showcase how to develop pure web components (no external libraries / frameworks).
 
