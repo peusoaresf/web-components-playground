@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+
+  <body>    
+    <script src='components/creditcard-input.js'></script>
+
+    <creditcard-input></creditcard-input>
+
+    <button onclick="submit()">Submit</button>
+    <span class="loading"></span>
+
+    <div>
+      <h3>Form as JSON:</h3>
+      <span class="formdata-ref"></span>
+    </div>
+  </body>
+  <script>
+    let formData = undefined
+
+    const cardInput = document.querySelector('creditcard-input')
+
+    cardInput.addEventListener('onchange', ({ detail }) => {      
+      formData = detail
+      document.querySelector('.formdata-ref').innerHTML = JSON.stringify(detail)
+    })
+
+    const submit = async () => {
+      if (!formData) {        
+        alert('Please fill in all the required fields')
+        return
+      }
+
+      document.querySelector('.loading').innerHTML = 'Loading...'
+
+      await ajaxCall(formData)
+
+      document.querySelector('.loading').innerHTML = 'DONE!'
+    }
+
+    const ajaxCall = async ({
+      cardnumber,
+      expirydate,
+      cvc,
+      cardholdername
+    }) => new Promise((resolve) => setTimeout(resolve, 1000))
+  </script>
+</html>
