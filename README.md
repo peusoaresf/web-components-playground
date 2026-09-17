@@ -12,6 +12,6 @@ https://peusoaresf.github.io/web-components-playground/
 
 #### creditcard-input
 
-Simple component that renders 4 inputs (cardnumber, expiry date, cvc and cardholder name) and triggers the ```onchange``` event whenever the user interacts with the form.
+A [custom HTML element](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements) that renders 4 inputs (cardnumber, expiry date, cvc and cardholder name) and triggers the ```onchange``` event whenever the user interacts with the form.
 The idea is that the component only passes the form data forward when it is in a valid state, any other time and the value dispatched is ```undefined```.
 With that said, on the demo page, you shold be able to interact with the form in any way and the submit button should only actually perform the fake ajax call when we have all the data in hands.
